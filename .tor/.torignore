@@ -1,0 +1,92 @@
+# 默认的 .torignore 文件
+
+# 通用
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+
+# 版本控制
+.git/
+.svn/
+.hg/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+.gradle/
+build/
+
+# C/C++
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
+
+# 前端开发
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+.cache/
+dist/
+.next/
+
+# 编辑器和IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 其他
+*.bak
+*.backup
+*.old
