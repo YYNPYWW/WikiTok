@@ -22,6 +22,7 @@ const preloadImage = (src: string): Promise<void> => {
 };
 
 export function useWikiArticles() {
+  // <WikiArticle[]> 表示 articles 是 WikiArticle[] 类型的数组
   const [articles, setArticles] = useState<WikiArticle[]>([]);
   const [loading, setLoading] = useState(false);
   const [buffer, setBuffer] = useState<WikiArticle[]>([]);
@@ -49,8 +50,9 @@ export function useWikiArticles() {
             origin: "*",
           })
       );
-
+      console.log('获取到的相应！！！！！',response)
       const data = await response.json();
+      console.log('获取到的初始数据！！！！！',data)
       const newArticles = Object.values(data.query.pages)
         .map((page: any) => ({
           title: page.title,
@@ -88,5 +90,6 @@ export function useWikiArticles() {
     }
   }, [buffer]);
 
+  // fetchArticles: getMoreArticles 表示将 getMoreArticles 函数以 fetchArticles 的名字导出
   return { articles, loading, fetchArticles: getMoreArticles };
 }

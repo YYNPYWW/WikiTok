@@ -40,6 +40,7 @@ function App() {
   return (
     <div className="h-screen w-full bg-black text-white overflow-y-scroll snap-y snap-mandatory">
       <div className="fixed top-4 left-4 z-50">
+        {/* 左上角 logo 点击之后刷新页面 */}
         <button
           onClick={() => window.location.reload()}
           className="text-2xl font-bold text-white drop-shadow-lg hover:opacity-80 transition-opacity"
@@ -49,6 +50,7 @@ function App() {
       </div>
 
       <div className="fixed top-4 right-4 z-50 flex flex-col items-end gap-2">
+        {/* 右上角 about 点击之后弹窗显示 WikiTok 相关信息 */}
         <button
           onClick={() => setShowAbout(!showAbout)}
           className="text-sm text-white/70 hover:text-white transition-colors"

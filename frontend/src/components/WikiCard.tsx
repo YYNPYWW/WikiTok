@@ -30,7 +30,10 @@ export function WikiCard({ article }: WikiCardProps) {
                     `pageids=${article.pageid}&explaintext=1&exintro=1&` +
                     `exsentences=5`  // Limit to 5 sentences
                 );
+                // console.log('API', currentLanguage.api);
+                // console.log('Pageid', article.pageid)
                 const data = await response.json();
+                // console.log("!!!!!!!!!!!!!",data);
                 const content = data.query.pages[article.pageid].extract;
                 if (content) {
                     setArticleContent(content);

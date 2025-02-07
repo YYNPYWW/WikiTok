@@ -7,7 +7,10 @@ export function LanguageSelector() {
   const { setLanguage } = useLocalization();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // 在点击外部时检查是否应该关闭下拉菜单
   const handleClickOutside = (event: MouseEvent) => {
+    // dropdownRef.current 表示下拉菜单的最外层 div，即引用整个 div
+    // 当未点击 Language 相关内容时或点击下拉菜单之外的区域时，关闭下拉菜单
     if (
       dropdownRef.current &&
       !dropdownRef.current.contains(event.target as Node)
@@ -17,13 +20,16 @@ export function LanguageSelector() {
   };
 
   useEffect(() => {
+    // 组件挂载时，添加全局点击事件监听器
     document.addEventListener("mousedown", handleClickOutside);
+    // 返回清理函数，在组件卸载时执行
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, []); // 依赖项为空，表示只在组件挂载和卸载时执行一次
 
   return (
+    // 将 ref 绑定到最外层 div上
     <div
       className="relative inline-flex items-center"
       onClick={() => setShowDropdown(!showDropdown)}
